@@ -56,13 +56,13 @@ var svg = d3.select('body')
     .attr('transform', 'translate(' + 0 +
     ',' + 0 + ')');
 
-var textthick = height/3.5
+var textthick = height/3.25
 
 
-text1y = height/3-textthick/2
+text1y = height/2-textthick*1.05
 usedoclength = textlength
 
-text2y = 2*height/3-textthick/2
+text2y = height/2 + textthick/20
 
 
 svg.append("rect")
@@ -78,7 +78,7 @@ svg.append("rect")
 svg.append("text")
     .attr("font-size",32)
     .attr("x",width/2)
-    .attr("y", text1y - 50)
+    .attr("y", text1y - 32)
     .attr("text-anchor","middle")
     .attr("dominant-baseline","bottom")
     .attr("fill", "white")
@@ -97,7 +97,7 @@ svg.append("text")
 svg.append("text")
     .attr("font-size",32)
     .attr("x",width/2)
-    .attr("y", text2y + 50 + textthick)
+    .attr("y", text2y + 42 + textthick)
     .attr("text-anchor","middle")
     .attr("dominant-baseline","top")
     .attr("fill", "white")
@@ -109,7 +109,7 @@ svg.append("text")
   .attr("font-size", 28)
   .attr("x",width/4)
   .attr("text-anchor","start")
-  .attr("y", height - 40)
+  .attr("y", text2y + 84 + textthick)
   .attr("fill", "yellow")
   .attr("font-family", "sans-serif")
   .text("Deletion")
@@ -118,7 +118,7 @@ svg.append("text")
   .attr("font-size", 28)
   .attr("x",3*width/4)
   .attr("text-anchor","end")
-  .attr("y", height - 40)
+  .attr("y", text2y + 84 + textthick)
   .attr("fill", "magenta")
   .attr("font-family", "sans-serif")
   .text("Insertion")
@@ -127,7 +127,7 @@ svg.append("text")
   .attr("font-size", 28)
   .attr("x",width/2)
   .attr("text-anchor","middle")
-  .attr("y", height - 40)
+  .attr("y", text2y + 84 + textthick)
   .attr("fill", "orangered")
   .attr("font-family", "sans-serif")
   .text("Mutation")
@@ -249,7 +249,7 @@ for (let i = 0; i < text1.length; i ++){
 //   .data(indices)
 //   .enter().append("text")
 //   .attr("font-size",0)
-//   .attr("font-family", "Songti SC")
+//   .attr("font-family", "SimSun")
 //   .attr("text-anchor", "start")
 //   .attr('display', "none")
 //   .attr("dominant-baseline", "middle")
@@ -264,7 +264,7 @@ for (let i = 0; i < text1.length; i ++){
 //   .enter().append("text")
 //   .attr("font-size",0)
 //   .attr('display', "none")
-//   .attr("font-family", "Songti SC")
+//   .attr("font-family", "SimSun")
 //   .attr("text-anchor", "start")
 //   .attr("dominant-baseline", "middle")
 //   .attr("x", function(d){return x(d)})
